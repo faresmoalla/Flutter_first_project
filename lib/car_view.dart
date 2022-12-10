@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 
 class CarView extends StatelessWidget {
-  String marque ;
-  String model; 
-  String image;
+  final String marque ;
+  final String model; 
+  final String image;
    CarView(this.marque,this.model,this.image) ;
 
   

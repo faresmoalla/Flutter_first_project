@@ -1,55 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_first_application/car_list.dart';
 import 'car_view.dart';
+import 'car_list.dart';
 
-void main() =>  runApp( MyApp());
-
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-
-return MaterialApp(
-  title : "Welcome Fares",
-  home : Scaffold(
-    appBar: AppBar(
-      title : Text("My car") 
-    ),
-    body: Column(
-      children: [
-        CarView("kia", "rio", "images/v2.jpg"),
-        Card(
-          child: Row(
-            children: [
-            Image.asset("images/v1.jpg",width: 150,height: 150),
-            Container(
-              margin: EdgeInsets.fromLTRB(50, 0, 0, 0),
-              child:   Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Peugoet"),
-                Text("206")
-              ],
-
-            ),
-
-
-            ),
-           
-
-            ],
-          ),
-
-
-        ),
-
-      ],
-    )
+    return MaterialApp(
+        title: "Welcome Fares",
+        home: CarList()
 
 
 
-  )
-); 
-}
-
+            );
+  }
 }
