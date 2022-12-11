@@ -6,17 +6,17 @@ import 'car_view.dart';
 class CarList extends StatelessWidget{
   
   List<Car> listcars = [
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
-Car("Seat","Ibiza","Images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
+Car("Seat","Ibiza","images/v1.jpg"),
   ];
 
   @override
@@ -35,20 +35,18 @@ Car("Seat","Ibiza","Images/v1.jpg"),
     itemCount: listcars.length,
     ),
     )  ;  
-    
 
-
-
-    
-   
 
   }
 
 }
+
+
+
 class Car {
-  late final String carMark;
-  late final String carModel;
-  late final String carImage;
+   final String carMark;
+   final String carModel;
+   final String carImage;
   Car(
      this.carMark,
      this.carModel,
