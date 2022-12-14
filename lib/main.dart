@@ -9,9 +9,9 @@ import 'package:flutter_first_application/car_list.dart';
 void main() => runApp(
 MaterialApp(
   title: "Welcome Fares",
-  home : MyApp(),
+  //home : MyApp(),
   routes : {
-    "": (context)=> MyApp()  ,
+    "/": (context)=> MyApp()  ,
     "/add"   :  (context)=> one()  ,
     
   }
