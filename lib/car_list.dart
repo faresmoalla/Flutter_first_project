@@ -7,37 +7,29 @@ class CarList extends StatelessWidget{
   
   List<Car> listcars = [
 Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
-Car("Seat","Ibiza","images/v1.jpg"),
+Car("aa","Ibiza","images/v1.jpg"),
+Car("zz","Ibiza","images/v1.jpg"),
+Car("ee","Ibiza","images/v1.jpg"),
+Car("rr","Ibiza","images/v1.jpg"),
+Car("tt","Ibiza","images/v1.jpg"),
+Car("vv","Ibiza","images/v1.jpg"),
+Car("ss","Ibiza","images/v1.jpg"),
+Car("gg","Ibiza","images/v1.jpg"),
+Car("xx","Ibiza","images/v1.jpg"),
+Car("zz","Ibiza","images/v1.jpg"),
   ];
 
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Cars Agency")
-      ),
-    body :
-    
-     ListView.builder(itemBuilder:(context, index) {
+    return ListView.builder(itemBuilder:(context, index) {
       
       return CarView(listcars[index].carMark,listcars[index].carModel,listcars[index].carImage);
 
     },
 
     itemCount: listcars.length,
-    ),
-    
-    )  ;  
+    ) ;  
 
 
   }

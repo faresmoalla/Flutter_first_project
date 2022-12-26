@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter_first_application/Addcar.dart';
+import 'package:flutter_first_application/bottomNav.dart';
 import 'package:flutter_first_application/car_detail.dart';
 import 'package:flutter_first_application/car_list.dart';
 
@@ -15,7 +15,7 @@ MaterialApp(
   routes : {
     "/": (context)=> MyApp()  ,
     "/list"   :  (context)=> CarList() ,
-    "/add" : (context)=> Addcar()
+    "/add" : (context)=> BottomNav()
     
   }
 )
