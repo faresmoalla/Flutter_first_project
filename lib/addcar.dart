@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_first_application/main.dart';
 
@@ -12,12 +12,13 @@ appBar: AppBar(
   title: Text("Add a new Car")
 ),
 bottomNavigationBar: BottomNavigationBar(
-  items: [
-    BottomNavigationBarItem( 
-      label : "Car List"
-    ),
-  ],
-  
+   type: BottomNavigationBarType.fixed,
+   
+ items: [
+  BottomNavigationBarItem(label : "a",icon: Icon(Icons.list)),
+  BottomNavigationBarItem(label : "b",icon: Icon(Icons.add)),
+
+ ],
   
   ),
 body : 
