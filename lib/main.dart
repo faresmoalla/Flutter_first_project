@@ -1,5 +1,7 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
-import 'package:flutter_first_application/One.dart';
+import 'package:flutter_first_application/Addcar.dart';
 import 'package:flutter_first_application/car_detail.dart';
 import 'package:flutter_first_application/car_list.dart';
 
@@ -12,7 +14,8 @@ MaterialApp(
   //home : MyApp(),
   routes : {
     "/": (context)=> MyApp()  ,
-    "/add"   :  (context)=> one()  ,
+    "/list"   :  (context)=> CarList() ,
+    "/add" : (context)=> Addcar()
     
   }
 )
@@ -56,7 +59,7 @@ class MyApp extends StatelessWidget {
               ElevatedButton(
           
                 onPressed: (){
-                   Navigator.pushReplacementNamed(context,"/add");
+                   Navigator.pushReplacementNamed(context,"/list");
                    
                     /*  Navigator.push(
                         
@@ -66,7 +69,7 @@ class MyApp extends StatelessWidget {
               /*   Navigator.of(context).push(MaterialPageRoute(builder: (context){
                   return  one();} ));*/
          // Navigator.pushNamed(context, '/second');
-              }, child: Text("Book a car")),
+              }, child: Text("List Cars")),
 
               TextButton(
                     style: TextButton.styleFrom(
@@ -75,10 +78,11 @@ class MyApp extends StatelessWidget {
                     
                     ),
                 onPressed: (){
+                    Navigator.pushReplacementNamed(context,"/add");
                
               }, child: 
               Row(
-                children: [Text("Sign up"),
+                children: [Text("Add"),
                 Icon(Icons.ac_unit_rounded)
                    ]
                     )    , 

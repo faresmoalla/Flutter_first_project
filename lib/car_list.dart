@@ -26,7 +26,9 @@ Car("Seat","Ibiza","images/v1.jpg"),
       appBar: AppBar(
         title: Text("Cars Agency")
       ),
-    body : ListView.builder(itemBuilder:(context, index) {
+    body :
+    
+     ListView.builder(itemBuilder:(context, index) {
       
       return CarView(listcars[index].carMark,listcars[index].carModel,listcars[index].carImage);
 
@@ -48,6 +50,7 @@ class Car {
    final String carMark;
    final String carModel;
    final String carImage;
+
   Car(
      this.carMark,
      this.carModel,
