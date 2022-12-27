@@ -141,6 +141,7 @@ void initState() {
                 OutlinedButton(
                     onPressed: () {
                       if(myKey.currentState!.validate()){
+                          myKey.currentState?.save();
        ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Processing Data')),
                   );
@@ -160,7 +161,26 @@ void initState() {
                       }
                     
                     },
-                    child: const Text("Add"))
+                    child: const Text("Add")),
+                    
+
+                     TextButton(
+                    style: TextButton.styleFrom(
+                       primary: Colors.blue,
+                    onSurface: Colors.red,
+                    
+                    ),
+                onPressed: (){
+                  
+                  myKey.currentState?.reset();
+               
+              }, child: 
+              Row(
+                children: [Text("Clear"),
+               
+                   ]
+                    )    , 
+              )
               ],
             )
           ],
