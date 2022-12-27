@@ -21,6 +21,23 @@ return  Scaffold(
 appBar: AppBar(
   title: Text("Add a new Car")
 ),
+drawer: Drawer(
+  child: Column(
+    children: [
+      AppBar(
+        automaticallyImplyLeading: false,
+        title: Text("choose an option")
+      ),
+        ListTile(
+            title :  Text("Go to Tap Bar"),
+       onTap: () => Navigator.pushReplacementNamed(context,"/tabinterface"),
+
+      )
+
+    ],
+  ),
+),
+
 bottomNavigationBar: BottomNavigationBar(
    type: BottomNavigationBarType.fixed,
    

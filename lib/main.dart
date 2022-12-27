@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_first_application/bottomNav.dart';
 import 'package:flutter_first_application/car_detail.dart';
 import 'package:flutter_first_application/car_list.dart';
+import 'package:flutter_first_application/tabinterface.dart';
 
 
 
@@ -15,7 +16,9 @@ MaterialApp(
   routes : {
     "/": (context)=> MyApp()  ,
     "/list"   :  (context)=> CarList() ,
-    "/add" : (context)=> BottomNav()
+    "/bottomnav" : (context)=> BottomNav(),
+    "/tabinterface" : (context)=> Tabinterface()
+    
     
   }
 )
@@ -78,7 +81,7 @@ class MyApp extends StatelessWidget {
                     
                     ),
                 onPressed: (){
-                    Navigator.pushReplacementNamed(context,"/add");
+                    Navigator.pushReplacementNamed(context,"/bottomnav");
                
               }, child: 
               Row(
@@ -90,8 +93,8 @@ class MyApp extends StatelessWidget {
              
               
               OutlinedButton(onPressed: (){
-                print("fares2");
-              }, child: Text("log in"))
+                   Navigator.pushReplacementNamed(context,"/tabinterface");
+              }, child: Text("Tab"))
               , 
                IconButton(onPressed: (){
                 print("fares2");
