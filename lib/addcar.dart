@@ -51,7 +51,18 @@ class _addcarState extends State<addcar> {
                     border: OutlineInputBorder(), labelText: "Quantity"),
                 onSaved: (String? value) {
                   quantity = int.parse(value!);
-                }),
+                },
+                 validator: ( String? value) {
+                if( value!.isEmpty){
+                  return "required";  
+                }
+                
+                if(int.tryParse(value)==null){
+                      return "must be a number";
+                  }
+
+              },
+                ),
             const SizedBox(
               height: 10,
             ),
@@ -59,6 +70,12 @@ class _addcarState extends State<addcar> {
               decoration: const InputDecoration(
                   border: OutlineInputBorder(), labelText: "carModel"),
               onSaved: (String? value) => carModel = value!,
+               validator: ( String? value) {
+                if( value!.isEmpty){
+                  return "required";  
+                }
+                return null ;
+              },
             ),
             const SizedBox(
               height: 10,
@@ -67,6 +84,12 @@ class _addcarState extends State<addcar> {
               maxLines: 3,
               decoration: const InputDecoration(
                   border: OutlineInputBorder(), labelText: "Description"),
+                   validator: ( String? value) {
+                if( value!.isEmpty){
+                  return "required";  
+                }
+                return null ;
+              },
               onSaved: (String? value) => description = value!,
             ),
             const SizedBox(
