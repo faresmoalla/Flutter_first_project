@@ -7,16 +7,30 @@ class addcar extends StatefulWidget {
 }
 
 class _addcarState extends State<addcar> {
-   late final String carMark;
-  late final int quantity;
-  late final String carModel;
-  late final String description;
+    String? carMark ;
+    int? quantity;
+    String? carModel;
+     String? description;
+
+
+/*
+void initState() {
+  carMark = "";
+    quantity = 0;
+      carModel = "";
+        description = "";
+
+  super.initState();
+}
+*/
+  GlobalKey<FormState> myKey = new GlobalKey();
 
   @override
   Widget build(BuildContext context) {
 
     return SingleChildScrollView(
       child: Form(
+        key :myKey,
         child: Column(
           children: [
             Container(
@@ -25,13 +39,19 @@ class _addcarState extends State<addcar> {
               height: 110,
               width: 110,
             ),
+           
             TextFormField(
               
               decoration: const InputDecoration(
                   border: OutlineInputBorder(), labelText: "Mark"),
-              onSaved: (String? value) {
+              onChanged: (value) {
 
-               carMark = value!; 
+                 carMark = value;  
+                 /*
+                 setState(() {
+               carMark = value!;     
+                  });
+                */
                },
                
               validator: ( String? value) {
@@ -45,12 +65,20 @@ class _addcarState extends State<addcar> {
             const SizedBox(
               height: 10,
             ),
+
+
+
+
             TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), labelText: "Quantity"),
-                onSaved: (String? value) {
-                  quantity = int.parse(value!);
+                onChanged: ( String? value) {
+                  quantity = int.parse(value!);  
+                 /*   setState(() {
+              quantity = int.parse(value);   
+                  });*/
+                 
                 },
                  validator: ( String? value) {
                 if( value!.isEmpty){
@@ -66,10 +94,21 @@ class _addcarState extends State<addcar> {
             const SizedBox(
               height: 10,
             ),
+
+
+
+
             TextFormField(
               decoration: const InputDecoration(
                   border: OutlineInputBorder(), labelText: "carModel"),
-              onSaved: (String? value) => carModel = value!,
+              onChanged: (value) {
+                 carModel = value;
+                 /*
+   setState(() {
+           carModel = value!;
+                  });*/
+         
+              } ,
                validator: ( String? value) {
                 if( value!.isEmpty){
                   return "required";  
@@ -90,7 +129,8 @@ class _addcarState extends State<addcar> {
                 }
                 return null ;
               },
-              onSaved: (String? value) => description = value!,
+             
+              onChanged: (value) => description = value,
             ),
             const SizedBox(
               height: 10,
@@ -100,14 +140,25 @@ class _addcarState extends State<addcar> {
               children: [
                 OutlinedButton(
                     onPressed: () {
-                      showDialog(
+                      if(myKey.currentState!.validate()){
+       ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Processing Data')),
+                  );
+                    showDialog(
                           context: context,
                           builder: (context) {
                             return AlertDialog(
                                 title: const Text("my car"),
-                                content: Text("Car Model " +carModel +" car mark " +carMark +" quantite " +quantity.toString())
+                          
+                                
+                                content: 
+                                
+                                Text("Car Model $carModel car mark $carMark quantite $quantity")
+                                
                                     );
                           });
+                      }
+                    
                     },
                     child: const Text("Add"))
               ],
